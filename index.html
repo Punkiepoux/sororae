@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SORORAE — Jeu de plateau</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- AOS – Animate on Scroll -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <!-- Custom styles -->
+  <link href="style.css" rel="stylesheet" />
+
+</head>
+<body>
+
+<!-- Floating embers canvas -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- ───────────── NAVBAR ───────────── -->
+<nav class="navbar navbar-expand-lg" id="main-nav">
+  <div class="container">
+    <a class="navbar-brand" href="#">Sororae</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto gap-3">
+        <li class="nav-item"><a class="nav-link" href="#le-jeu">Le Jeu</a></li>
+        <li class="nav-item"><a class="nav-link" href="#les-soeurs">Les Sœurs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#rituel">Rituel</a></li>
+        <li class="nav-item"><a class="nav-link" href="#mecanique">Mécanique</a></li>
+        <li class="nav-item ms-lg-3">
+          <a class="btn btn-ritual btn-sm" href="#cta">Rejoindre le cercle</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ───────────── HERO ───────────── -->
+<section class="hero" id="hero">
+  <div class="hero-bg" id="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Jeu de société · jusqu'à 6 joueurs · 14+</span>
+    <h1 class="hero-title">SORORAE</h1>
+    <p class="hero-subtitle">Une forêt maudite. Des sorcières emprisonnées.<br>Unissez vos dons pour réchapper ensemble.</p>
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+      <a href="#le-jeu" class="btn btn-ritual">Découvrir</a>
+      <a href="#cta" class="btn btn-ritual btn-ritual-solid">Précommander</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <i class="bi bi-chevron-down text-gold"></i>
+    <span>Entrer dans la forêt</span>
+  </div>
+</section>
+
+<!-- ───────────── LE JEU ───────────── -->
+<section id="le-jeu">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5 text-center" data-aos="fade-right">
+        <img
+          src="86e33a32-4443-4014-9c2e-ed8266cc67c9.jpeg"
+          alt="Illustration de couverture de Sororae — quatre sorcières autour d'un feu de camp"
+          class="game-cover img-fluid"
+        />
+      </div>
+      <div class="col-lg-7" data-aos="fade-left">
+        <span class="section-eyebrow">Le Jeu</span>
+        <h2 class="section-title">Une forêt maudite vous retient</h2>
+        <div class="rune-divider"><i class="bi bi-stars"></i></div>
+        <p class="section-lead mb-4">
+          Sororæ est un jeu de société narratif et stratégique pour jusqu'à 6 joueurs.
+          Vous incarnez des sorcières aux capacités uniques, emprisonnées dans une forêt
+          maudite. Seule la coopération vous permettra d'en réchapper.
+        </p>
+        <p class="section-lead mb-4">
+          Utilisez vos dons, forgez des alliances et prenez des décisions qui transformeront
+          la forêt, les liens entre les sœurs et votre destin collectif. Chaque partie
+          raconte une aventure différente, immersive, rejouable et esthétique.
+        </p>
+        <p class="section-lead mb-5">
+          Conçu pour célébrer la diversité des femmes à travers le monde, chaque sorcière
+          est inspirée d'une femme d'une région différente du globe — leurs forces,
+          leurs cultures, leurs magies.
+        </p>
+
+        <!-- Stats -->
+        <div class="d-flex align-items-center gap-4 flex-wrap">
+          <div class="stat-item">
+            <span class="stat-number">2–6</span>
+            <span class="stat-label">Joueurs</span>
+          </div>
+          <div class="stat-separator d-none d-sm-block"></div>
+          <div class="stat-item">
+            <span class="stat-number">60'</span>
+            <span class="stat-label">Par partie</span>
+          </div>
+          <div class="stat-separator d-none d-sm-block"></div>
+          <div class="stat-item">
+            <span class="stat-number">14+</span>
+            <span class="stat-label">Âge conseillé</span>
+          </div>
+          <div class="stat-separator d-none d-sm-block"></div>
+          <div class="stat-item">
+            <span class="stat-number">120</span>
+            <span class="stat-label">Cartes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── LORE ───────────── -->
+<section id="lore">
+  <div class="container">
+    <div data-aos="fade-up">
+      <p class="lore-quote">
+        Perdues dans une forêt maudite qui dévore le temps et les souvenirs, elles n'ont
+        qu'une issue : unir leurs dons, traverser les dangers, et réchapper ensemble
+        avant que la forêt ne les réclame pour toujours.
+      </p>
+    </div>
+    <div class="mt-5 row g-4 justify-content-center">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="mec-card text-center">
+          <i class="bi bi-moon-stars mec-icon"></i>
+          <p class="mec-title">Un univers de sorcellerie</p>
+          <p class="mec-text">Rituels, potions, malédictions et bénédictions — la magie n'est qu'un outil entre des mains expertes.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="mec-card text-center">
+          <i class="bi bi-tree mec-icon"></i>
+          <p class="mec-title">Une forêt vivante</p>
+          <p class="mec-text">Le plateau évolue à chaque partie. La forêt se souvient, récompense, et punit.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="mec-card text-center">
+          <i class="bi bi-people mec-icon"></i>
+          <p class="mec-title">Des femmes de pouvoir</p>
+          <p class="mec-text">Chaque sorcière est inspirée d'une femme d'une région du globe différente — une célébration de la diversité et de la force au féminin.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── LES SŒURS ───────────── -->
+<section id="les-soeurs">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-eyebrow">Les Quatre Sœurs</span>
+      <h2 class="section-title">Choisissez votre voie</h2>
+      <div class="rune-divider"><i class="bi bi-fire"></i></div>
+      <p class="section-lead mx-auto" style="max-width:560px">
+        Chaque sorcière est inspirée d'une femme d'une région du monde, avec ses propres
+        dons et sa propre culture magique. Ensemble, elles sont plus fortes.
+      </p>
+    </div>
+    <div class="row g-4">
+
+      <div class="col-sm-6 col-xl-3" data-aos="fade-up" data-aos-delay="0">
+        <div class="sister-card">
+          <div class="sister-sigil">🕸️</div>
+          <h3 class="sister-name">Morrwen</h3>
+          <p class="sister-title">La Tisserande · [Région à définir]</p>
+          <p class="sister-desc">Maîtresse des liens invisibles, elle tisse les fils entre les sœurs et les esprits de la forêt. Ses enchantements renforcent le groupe face aux dangers.</p>
+          <span class="sister-power">Enchantement</span>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-xl-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="sister-card">
+          <div class="sister-sigil">🐦‍⬛</div>
+          <h3 class="sister-name">Sylvara</h3>
+          <p class="sister-title">La Chasseresse · [Région à définir]</p>
+          <p class="sister-desc">La forêt maudite n'a aucun secret pour elle. Animaux, vents et racines lui parlent — elle guide le groupe à travers les pièges de la forêt.</p>
+          <span class="sister-power">Communion</span>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-xl-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="sister-card">
+          <div class="sister-sigil">⚗️</div>
+          <h3 class="sister-name">Ignaveth</h3>
+          <p class="sister-title">L'Alchimiste · [Région à définir]</p>
+          <p class="sister-desc">Herboriste et soigneuse hors pair. Ses potions repoussent les malédictions et renforcent les sœurs. Elle transforme les ressources de la forêt en remèdes.</p>
+          <span class="sister-power">Alchimie</span>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-xl-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="sister-card">
+          <div class="sister-sigil">🌙</div>
+          <h3 class="sister-name">Calydris</h3>
+          <p class="sister-title">La Voyante · [Région à définir]</p>
+          <p class="sister-desc">Elle perçoit ce que la forêt prépare. Ses visions permettent au groupe d'anticiper les dangers et de choisir le bon chemin vers la liberté.</p>
+          <span class="sister-power">Divination</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── RITUEL (HOW TO PLAY) ───────────── -->
+<section id="rituel">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-5" data-aos="fade-right">
+        <span class="section-eyebrow">Comment jouer</span>
+        <h2 class="section-title">Le déroulé du rituel</h2>
+        <div class="rune-divider justify-content-start" style="margin:0 0 2rem"><i class="bi bi-moon"></i></div>
+        <p class="section-lead">
+          Une partie de Sororæ se déroule en plusieurs phases à travers la forêt maudite.
+          Chaque décision collective transforme l'environnement et le destin des sorcières.
+          Réussirez-vous à vous échapper avant que la forêt ne vous consume ?
+        </p>
+      </div>
+      <div class="col-lg-7" data-aos="fade-left">
+        <div class="step">
+          <div class="step-number">I</div>
+          <div class="step-body">
+            <h4>Le Rassemblement</h4>
+            <p>Chaque joueur choisit sa sorcière et reçoit ses capacités uniques. La forêt maudite est générée aléatoirement — aucune partie ne sera identique.</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-number">II</div>
+          <div class="step-body">
+            <h4>L'Exploration</h4>
+            <p>Ensemble, explorez la forêt, récoltez des ressources, utilisez vos dons et prenez des décisions collectives. Chaque choix transforme l'environnement et les alliances.</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-number">III</div>
+          <div class="step-body">
+            <h4>Les Épreuves</h4>
+            <p>La forêt impose des dangers croissants. Les sorcières doivent coordonner leurs capacités pour surmonter les obstacles et les malédictions qui barrent leur chemin.</p>
+          </div>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step">
+          <div class="step-number">IV</div>
+          <div class="step-body">
+            <h4>L'Évasion</h4>
+            <p>Les sorcières atteignent la sortie — ou succombent à la forêt. Victoire collective si toutes échappent, défaite si la forêt réclame l'une d'entre elles.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── MÉCANIQUE ───────────── -->
+<section id="mecanique">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <span class="section-eyebrow">Mécanique</span>
+      <h2 class="section-title">Ce qui rend Sororae unique</h2>
+      <div class="rune-divider"><i class="bi bi-gem"></i></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+        <div class="mec-card">
+          <i class="bi bi-shuffle mec-icon"></i>
+          <p class="mec-title">Deck-Building évolutif</p>
+          <p class="mec-text">Votre deck s'enrichit au fil de la partie. Chaque carte acquise modifie votre stratégie et votre style de jeu.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="mec-card">
+          <i class="bi bi-grid-3x3-gap mec-icon"></i>
+          <p class="mec-title">Forêt modulaire</p>
+          <p class="mec-text">Le plateau est composé de tuiles hexagonales. Chaque configuration ouvre de nouvelles routes et stratégies de contrôle.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="mec-card">
+          <i class="bi bi-people mec-icon"></i>
+          <p class="mec-title">Interactions sociales profondes</p>
+          <p class="mec-text">Décisions collectives, alliances et moments de tension — chaque partie crée des souvenirs et des histoires uniques autour de la table.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="mec-card">
+          <i class="bi bi-journal-text mec-icon"></i>
+          <p class="mec-title">Narration intégrée</p>
+          <p class="mec-text">Des événements narratifs surgissent à chaque phase, ajoutant du contexte et des choix moraux à votre quête de pouvoir.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── CTA ───────────── -->
+<section id="cta">
+  <div class="container">
+    <div data-aos="fade-up">
+      <span class="section-eyebrow d-block text-center mb-3">Rejoindre le cercle</span>
+      <h2 class="cta-title">Le pacte vous appelle</h2>
+      <p class="cta-text">Inscrivez-vous pour être notifiée au lancement de la campagne de financement et recevoir des nouvelles exclusives de la forêt.</p>
+      <form class="d-flex gap-3 justify-content-center flex-wrap" onsubmit="handleSubmit(event)">
+        <input
+          type="email"
+          id="email-input"
+          placeholder="votre@adresse.mail"
+          required
+          class="form-control"
+          style="max-width:320px; background:rgba(17,13,30,.9); border:1px solid rgba(107,63,160,.4); color:var(--cream); border-radius:2px; font-family:'EB Garamond',serif;"
+        />
+        <button type="submit" class="btn btn-ritual btn-ritual-solid">Rejoindre</button>
+      </form>
+      <p id="form-msg" class="mt-3 text-amber" style="display:none; font-style:italic;">
+        Le cercle vous accueille. Nous vous écrirons bientôt. 🌙
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── FOOTER ───────────── -->
+<footer>
+  <div class="container">
+    <span class="footer-brand">SORORAE</span>
+    <p class="footer-tagline">Une forêt maudite. Des sorcières unies. Une seule issue.</p>
+    <div class="social-links">
+      <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+      <a href="#" aria-label="BoardGameGeek"><i class="bi bi-dice-5"></i></a>
+      <a href="#" aria-label="Kickstarter"><i class="bi bi-rocket"></i></a>
+    </div>
+    <div class="footer-links">
+      <a href="#le-jeu">Le Jeu</a>
+      <a href="#les-soeurs">Les Sœurs</a>
+      <a href="#rituel">Rituel</a>
+      <a href="#mecanique">Mécanique</a>
+      <a href="#cta">Contact</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Sororae. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<!-- ───────────── SCRIPTS ───────────── -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  /* ─── AOS init ─── */
+  AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 60 });
+
+  /* ─── Navbar scroll ─── */
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  /* ─── Hero bg loaded ─── */
+  const heroBg = document.getElementById('hero-bg');
+  const img = new Image();
+  img.src = '86e33a32-4443-4014-9c2e-ed8266cc67c9.jpeg';
+  img.onload = () => heroBg.classList.add('loaded');
+
+  /* ─── Ember particles ─── */
+  (function () {
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+    let W, H, particles = [];
+
+    function resize() {
+      W = canvas.width  = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize, { passive: true });
+    resize();
+
+    const COLORS = ['rgba(232,151,58,', 'rgba(200,98,26,', 'rgba(155,107,204,', 'rgba(212,180,131,'];
+
+    function Particle() {
+      this.reset = function () {
+        this.x = Math.random() * W;
+        this.y = H + 10;
+        this.r = Math.random() * 2 + .5;
+        this.alpha = Math.random() * .6 + .1;
+        this.speed = Math.random() * .6 + .2;
+        this.drift = (Math.random() - .5) * .4;
+        this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
+      };
+      this.reset();
+      this.y = Math.random() * H; // seed spread
+    }
+
+    for (let i = 0; i < 55; i++) particles.push(new Particle());
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      particles.forEach(p => {
+        p.y -= p.speed;
+        p.x += p.drift;
+        p.alpha -= .0008;
+        if (p.alpha <= 0 || p.y < -10) p.reset();
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = p.color + p.alpha + ')';
+        ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+
+  /* ─── CTA form ─── */
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('email-input').value = '';
+    document.getElementById('form-msg').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
