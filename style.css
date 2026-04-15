@@ -49,12 +49,13 @@ a:hover { color: var(--gold); }
   border-bottom: 1px solid rgba(107,63,160,.3);
 }
 .navbar-brand {
-  font-family: 'Cinzel', serif;
-  font-weight: 900;
-  font-size: 1.5rem;
-  color: var(--gold) !important;
-  letter-spacing: .15em;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+.navbar-logo {
+  height: 36px;
+  width: auto;
+  filter: brightness(0) saturate(100%) invert(80%) sepia(30%) saturate(500%) hue-rotate(5deg) brightness(95%);
 }
 .nav-link {
   color: var(--cream) !important;
@@ -84,7 +85,7 @@ a:hover { color: var(--gold); }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('86e33a32-4443-4014-9c2e-ed8266cc67c9.jpeg') center center / cover no-repeat;
+  background: url('d21d4409-fabe-4df9-85ec-136c859d13ca.jpeg') center center / cover no-repeat;
   transform: scale(1.06);
   transition: transform 8s ease-out;
 }
@@ -112,16 +113,16 @@ a:hover { color: var(--gold); }
   margin-bottom: 1.5rem;
   opacity: .9;
 }
-.hero-title {
-  font-size: clamp(4rem, 12vw, 9rem);
-  font-weight: 900;
-  line-height: 1;
-  color: var(--cream);
-  text-shadow:
-    0 0 40px rgba(200,98,26,.5),
-    0 0 80px rgba(107,63,160,.3);
+.hero-title-logo {
   margin-bottom: 1.5rem;
-  letter-spacing: .1em;
+}
+.hero-title-logo img {
+  width: clamp(280px, 55vw, 520px);
+  height: auto;
+  filter:
+    drop-shadow(0 0 24px rgba(200,98,26,.55))
+    drop-shadow(0 0 60px rgba(107,63,160,.35))
+    brightness(0) saturate(100%) invert(95%) sepia(15%) saturate(300%) hue-rotate(5deg) brightness(100%);
 }
 .hero-subtitle {
   font-size: clamp(1.05rem, 2.2vw, 1.35rem);
@@ -486,14 +487,12 @@ footer {
   padding: 3rem 0;
   text-align: center;
 }
-.footer-brand {
-  font-family: 'Cinzel', serif;
-  font-weight: 900;
-  font-size: 1.3rem;
-  color: var(--gold);
-  letter-spacing: .18em;
+.footer-logo {
+  height: 28px;
+  width: auto;
   display: block;
-  margin-bottom: .75rem;
+  margin: 0 auto .75rem;
+  filter: brightness(0) saturate(100%) invert(80%) sepia(30%) saturate(500%) hue-rotate(5deg) brightness(95%);
 }
 .footer-tagline {
   font-size: .9rem;
